@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CajaAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'CajaApp.dbo.Clientes' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="Row" />
+    </Key>
+    <Property Name="Cliente" Type="varchar" MaxLength="50" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="Calle" Type="varchar" MaxLength="50" />
+    <Property Name="Hab" Type="varchar" MaxLength="50" />
+    <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+    <Property Name="Estado" Type="varchar" MaxLength="50" />
+    <Property Name="Zip" Type="varchar" MaxLength="50" />
+    <Property Name="Row" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Celular" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="CajaAppModelStoreContainer">
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Clientes].[Cliente] AS [Cliente], 
+    [Clientes].[Correo] AS [Correo], 
+    [Clientes].[Telefono] AS [Telefono], 
+    [Clientes].[Calle] AS [Calle], 
+    [Clientes].[Hab] AS [Hab], 
+    [Clientes].[Ciudad] AS [Ciudad], 
+    [Clientes].[Estado] AS [Estado], 
+    [Clientes].[Zip] AS [Zip], 
+    [Clientes].[Row] AS [Row], 
+    [Clientes].[Celular] AS [Celular]
+    FROM [dbo].[Clientes] AS [Clientes]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
